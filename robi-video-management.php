@@ -10,7 +10,7 @@
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path:       /languages
- * Text Domain:      rvm
+ * Text Domain:      r_video_management
  */
 
 if ( !defined( 'ABSPATH' ) ) {
@@ -53,7 +53,8 @@ final class RVM_Video_Management {
      */
     public function rvm_initialize(){
         $menu = new Video\Management\Admin\Video_Post_Type();
-        $menu->
+        $menu->rvm_video_post_type();
+        $menu->rvm_video_category();
     }
 
     /**
@@ -67,8 +68,6 @@ final class RVM_Video_Management {
 
     /**
      * Create a method for get the class instance
-     *
-     * @return \Video\Management
      */
     public static function getInstance() {
 
