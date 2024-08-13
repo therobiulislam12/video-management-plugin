@@ -1,0 +1,20 @@
+{
+    "name": "therobiulislam12/video-management-plugin",
+    "description": "Simple Video Management Plugin",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Robiul Islam",
+            "email": "therobiulislam12@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Video\\Management\\": "includes/"
+        },
+        "files": ["includes/functions.php"]
+    }
+}
