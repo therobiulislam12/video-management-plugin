@@ -55,6 +55,7 @@ class Video_Post_Type {
             'exclude_from_search' => false,
             'publicly_queryable'  => true,
             'capability_type'     => 'page',
+            'menu_icon'           => 'dashicons-video-alt3',
             'taxonomies'          => array( 'video_category' ),
         );
         register_post_type( 'video', $args );
