@@ -39,7 +39,7 @@ final class RVM_Video_Management {
         $this->define_constant();
 
         // init hook
-        add_action( 'init', array($this, 'rvm_initialize') );
+        add_action( 'init', array( $this, 'rvm_initialize' ) );
 
         // after activation run plugin_loaded hook
         add_action( 'plugin_loaded', [$this, 'rvm_init_plugin'] );
@@ -51,7 +51,7 @@ final class RVM_Video_Management {
      * Only do work which need to run init
      * @return void
      */
-    public function rvm_initialize(){
+    public function rvm_initialize() {
         $menu = new Video\Management\Admin\Video_Post_Type();
         $menu->rvm_video_post_type();
         $menu->rvm_video_category();
@@ -59,11 +59,18 @@ final class RVM_Video_Management {
 
     /**
      * After install this function will be call
-     * 
+     *
      * @return void
      */
-    public function rvm_init_plugin(){
-        
+    public function rvm_init_plugin() {
+
+        // If admin page it'll be loader otherwise not loaded
+        if ( is_admin() ) {
+            new Video\Management\Admin();
+        } else {
+
+        }
+
     }
 
     /**
@@ -82,7 +89,7 @@ final class RVM_Video_Management {
 
     /**
      * Create all constant variable here
-     * 
+     *
      * @return void
      */
     public function define_constant() {
